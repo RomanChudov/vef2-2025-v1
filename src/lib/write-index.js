@@ -9,7 +9,7 @@ import {rightData} from "./right-data.js"
  * @returns {Promise<void>}
  */
 export async function writeIndexHtml(data) {
-  const htmlFilePath = `public/dist/index.html`;
+  const htmlFilePath = `./public/index.html`;
 
   const html = rightData(data)
     .map((item) => `<li><a href=${item.title}.html>${item.title}</a></li>`)

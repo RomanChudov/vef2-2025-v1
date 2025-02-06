@@ -34,7 +34,7 @@ async function writeQuestion(type) {
 
   type = jsTrouble(type);
 
-  const htmlFilePath = `public/dist/${type}.html`;
+  const htmlFilePath = `./public/${type}.html`;
   console.log(`Building ${type} html file`);
 
   var correctData = checkingQuestionForm(typeData);
