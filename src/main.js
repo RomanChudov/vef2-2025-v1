@@ -1,16 +1,16 @@
-import { read } from "node:fs";
+// import { read } from "node:fs";
 import fs from "node:fs/promises";
-import path from "node:path";
+// import path from "node:path";
 
-import { replaceHtmlEntities } from "./lib/replace-string.js";
-import { rettSvar } from "./lib/rett-svar.js";
+// import { replaceHtmlEntities } from "./lib/replace-string.js";
+// import { rettSvar } from "./lib/rett-svar.js";
 import { readJson } from "./lib/read-json.js";
 import { rightData } from "./lib/right-data.js";
 import { writeIndexHtml } from "./lib/write-index.js";
 import { parseIndexJson } from "./lib/parse-index.js";
 import { jsTrouble } from "./lib/js-trouble.js";
-import { checkingQuestionFormLengd } from "./lib/checking-form-lengd.js";
-import { checkingQuestionFormAnswers } from "./lib/checking-form-answer.js";
+// import { checkingQuestionFormLengd } from "./lib/checking-form-lengd.js";
+// import { checkingQuestionFormAnswers } from "./lib/checking-form-answer.js";
 import { checkingQuestionForm } from "./lib/checking-form.js";
 import { correctStringData } from "./lib/correct-stringData.js";
 import { krossaprof } from "./lib/krossaprof.js";
@@ -32,10 +32,9 @@ async function writeQuestion(type) {
   const typeJson = await readJson(`./data/${type}.json`);
   const typeData = parseIndexJson(typeJson);
 
-  var type = jsTrouble(type);
-  console.log(type);
+  type = jsTrouble(type);
 
-  const htmlFilePath = `dist/${type}.html`;
+  const htmlFilePath = `public/dist/${type}.html`;
   console.log(`Building ${type} html file`);
 
   var correctData = checkingQuestionForm(typeData);

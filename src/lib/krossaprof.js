@@ -4,7 +4,11 @@ export function krossaprof(correctData){
     const html = correctData
       .map(
         (item) => `
+        <h2>Spurning${correctData.indexOf(item)+1} </h2>
+
         <p>${item.question}</p><br />
+
+
         <input type="radio" id="${
           item.answers[0]["answer"]
         }" name="answers" value="0"><br />
