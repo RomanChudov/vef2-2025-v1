@@ -1,22 +1,4 @@
-import { read } from "node:fs";
-import fs from "node:fs/promises";
-import path from "node:path";
-import {rightData} from "./right-data.js"
 
-/**
- * Skrifa HTML fyrir yfirlit í index.html
- * @param {any} data Gögn til að skrifa
- * @returns {Promise<void>}
- */
-export async function writeIndexHtml(data) {
-  const htmlFilePath = `public/dist/index.html`;
-
-  const html = rightData(data)
-    .map((item) => `<li><a href=${item.title}.html>${item.title}</a></li>`)
-    .join("\n");
-
-
-  const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,7 +13,9 @@ export async function writeIndexHtml(data) {
     <ul>
          <li><a href=index.html>Forsíða</a></li>
 
-      ${html}
+      <li><a href=HTML.html>HTML</a></li>
+<li><a href=CSS.html>CSS</a></li>
+<li><a href=JavaScript.html>JavaScript</a></li>
     </ul>
     </nav>
     <main>
@@ -41,7 +25,3 @@ export async function writeIndexHtml(data) {
   </body>
 </html>
 
-`;
-
-  fs.writeFile(htmlFilePath, htmlContent, "utf8");
-}
