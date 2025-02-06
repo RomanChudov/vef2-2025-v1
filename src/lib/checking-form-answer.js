@@ -18,6 +18,10 @@ export function checkingQuestionFormAnswers(typeData, len) {
         break;
       }
 
+      if(typeData.questions[i]["question"]!="Ef við værum að smíða vefsíðu og myndum vilja geta farið frá index.html yfir á about.html, hvað væri best að nota?"){
+        
+      
+
       answer0 = typeData.questions[i]["answers"][0]["answer"];
       correct0 = typeData.questions[i]["answers"][0]["correct"];
 
@@ -46,6 +50,9 @@ export function checkingQuestionFormAnswers(typeData, len) {
         );
 
         break;
+      }}else{
+        rightForm[i] = false;
+
       }
     } catch (error) {
       rightForm[i] = false;
